@@ -1,16 +1,15 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Navbar } from './components/navbar/navbar';
+import { Hero } from './components/hero/hero';
+import { DashboardPreview } from './components/dashboard-preview/dashboard-preview';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styles: [],
+  imports: [Navbar, Hero, DashboardPreview],
   template: `
-    <h1>Hello, {{ title() }}</h1>
-
-    <router-outlet />
+    <app-navbar />
+    <app-hero />
+    <app-dashboard-preview />
   `,
 })
-export class App {
-  protected readonly title = signal('ecommerce');
-}
+export class App {}
